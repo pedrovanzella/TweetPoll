@@ -6,11 +6,14 @@ gem 'rails', '3.0.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'devise'
+gem 'omniauth', '~> 0.2.0.beta'
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'spork', '~> 0.9.0.rc'
   gem 'autotest-rails'
+  gem 'factory_girl_rails'
 end
 
 # Use unicorn as the web server
