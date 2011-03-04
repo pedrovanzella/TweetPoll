@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'spork', '~> 0.9.0.rc'
+  gem 'autotest-rails'
 end
 
 # Use unicorn as the web server
