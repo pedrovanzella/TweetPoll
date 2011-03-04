@@ -4,3 +4,24 @@ Using:
 Devise and Omniauth for Authentication
 CanCan for Authorization
 RSpec, spork, autotest and Factory-Girl for testing
+
+On OSX, use autotest-fsevent to save battery. On linux, autotest-inotify.
+autotest-growl is also awsome :D
+
+TODO:
+
+URGENT:
+-> Integration test for the presence of
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+on app/views/layouts/application.html.erb
+
+DEPLOYMENT:
+-> Setup default url options for your specific environment. Here is an
+     example of development environment:
+
+       config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+     This is a required Rails configuration. In production it must be the
+     actual host of your application
+
