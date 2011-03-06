@@ -13,9 +13,28 @@
   <%= stylesheet_link_tag 'custom', :media => 'screen' %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-<%= yield %>
+  <div class="container">
+    <header>
+      <nav class="topbar">
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "Sign out", destroy_user_session_path %></li>
+          <% else %>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
 
+    <nav class="flashes">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </nav>
+
+    <section class="body_content">
+      <%= yield %>
+    </section>
+  </div>
 </body>
 </html>
