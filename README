@@ -3,7 +3,7 @@ TweetPoll - Manage Twitter Polls.
 Using:
 Devise and Omniauth for Authentication
 CanCan for Authorization
-RSpec, spork, autotest and Factory-Girl for testing
+RSpec, spork, autotest, webrat and Factory-Girl for testing
 
 On OSX, use autotest-fsevent to save battery. On linux, autotest-inotify.
 autotest-growl is also awsome :D
