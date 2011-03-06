@@ -10,12 +10,6 @@ autotest-growl is also awsome :D
 
 TODO:
 
-URGENT:
--> Integration test for the presence of
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-on app/views/layouts/application.html.erb
-
 DEPLOYMENT:
 -> Setup default url options for your specific environment. Here is an
      example of development environment:

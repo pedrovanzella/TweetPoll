@@ -149,6 +149,10 @@ GEM
     tzinfo (0.3.24)
     warden (1.0.3)
       rack (>= 1.0.0)
+    webrat (0.7.3)
+      nokogiri (>= 1.2.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5.3)
 
 PLATFORMS
   ruby
@@ -162,3 +166,4 @@ DEPENDENCIES
   rspec-rails
   spork (~> 0.9.0.rc)
   sqlite3
+  webrat
