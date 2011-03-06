@@ -1,6 +1,11 @@
 TweetPoll::Application.routes.draw do
-	 match '/auth/:provider/callback' => 'authentications#create'  
-	 devise_for :users  
-	 resources :authentications  
+
+	#auth routes
+	 match '/auth/:provider/callback' => 'authentications#create'	 
+
+	 devise_for :users	
+	 
+
+	
 	 root :to => 'home#index'
 end
