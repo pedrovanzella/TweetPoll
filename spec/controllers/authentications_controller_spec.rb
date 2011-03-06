@@ -4,16 +4,17 @@ describe AuthenticationsController do
   fixtures :all
   render_views
 
+  before(:each) do
+    @attr = { :user_id => 1 }
+  end
 
   it "create action should render new template when model is invalid" do
-    Authentication.any_instance.stubs(:valid?).returns(false)
-    post :create
+    Authentication.create!()
     response.should render_template(:new)
   end
 
   it "create action should redirect when model is valid" do
-    Authentication.any_instance.stubs(:valid?).returns(true)
-    post :create
+    Authentication.create!(@attr)
     response.should redirect_to(authentication_url(assigns[:authentication]))
   end
 

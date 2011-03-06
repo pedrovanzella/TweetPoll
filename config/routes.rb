@@ -5,6 +5,7 @@ TweetPoll::Application.routes.draw do
 
 	 devise_for :users	
 	 
+         resources :authentications
 
 	
 	 root :to => 'home#index'
