@@ -17,8 +17,8 @@ group :development, :test do
   gem 'webrat'
 end
 
-# Use unicorn as the web server
-# gem 'unicorn'
+# Use unicorn as the web server for awesome performance
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
