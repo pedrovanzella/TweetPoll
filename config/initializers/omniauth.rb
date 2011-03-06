@@ -1,5 +1,3 @@
-CONFIG = YAML.load_file(Rails.root.join('config', 'apikeys.yml'))
-
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :twitter, CONFIG[:Twitter][:ConsumerKey], CONFIG[:Twitter][:ConsumerSecret]
+  provider :twitter, 'MQOtmTkwmCCs5fmVMXMhg', 'A2MLsH74Zqf80nXcRR1x4JyCM0T32kKppN2z5MCA'
 end
