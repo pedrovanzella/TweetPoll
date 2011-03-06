@@ -9,6 +9,9 @@ gem 'sqlite3'
 gem 'devise'
 gem 'omniauth', '~> 0.2.0.beta'
 
+#haml/sass for front-end ease
+gem 'haml'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'spork', '~> 0.9.0.rc'
@@ -16,6 +19,9 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'webrat'
 end
+
+#rails-friendly jquery install
+gem 'jquery-rails', '>= 0.2.6'
 
 # Use unicorn as the web server for awesome performance
 gem 'unicorn'
