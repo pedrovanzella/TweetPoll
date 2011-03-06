@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(:version => 20110306200315) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
+    t.string   "provider"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -9,16 +9,6 @@ describe AuthenticationsController do
     response.should render_template(:index)
   end
 
-  it "show action should not render show template" do
-    get :show, :id => Authentication.first
-    response.should_not render_template(:show)
-  end
-
-  it "new action should not render new template" do
-    get :new
-    response.should_not render_template(:new)
-  end
-
   it "create action should render new template when model is invalid" do
     Authentication.any_instance.stubs(:valid?).returns(false)
     post :create
@@ -29,23 +19,6 @@ describe AuthenticationsController do
     Authentication.any_instance.stubs(:valid?).returns(true)
     post :create
     response.should redirect_to(authentication_url(assigns[:authentication]))
-  end
-
-  it "edit action should not render edit template" do
-    get :edit, :id => Authentication.first
-    response.should_not render_template(:edit)
-  end
-
-  it "update action should not render edit template when model is invalid" do
-    Authentication.any_instance.stubs(:valid?).returns(false)
-    put :update, :id => Authentication.first
-    response.should_not render_template(:edit)
-  end
-
-  it "update action should not redirect when model is valid" do
-    Authentication.any_instance.stubs(:valid?).returns(true)
-    put :update, :id => Authentication.first
-    response.should_not redirect_to(authentication_url(assigns[:authentication]))
   end
 
   it "destroy action should destroy model and redirect to index action" do
