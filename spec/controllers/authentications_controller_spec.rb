@@ -10,7 +10,7 @@ describe AuthenticationsController do
 
   it "create action should redirect when model is valid" do
     Authentication.create!(@attr)
-    response.should redirect_to root_path
+    response.should be_successful
   end
 
   it "destroy action should destroy model and redirect to index action" do
