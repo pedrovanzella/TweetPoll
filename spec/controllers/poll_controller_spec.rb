@@ -25,7 +25,6 @@ describe PollController do
 			response.should be_successful
     end
 
-
   end
 
   it "create action should redirect when model is valid" do
@@ -36,7 +35,7 @@ describe PollController do
     it "should be successful" do
       post 'destroy', :id => 1
 			@poll.destroy
-      response.should be_success
+      response.should redirect_to(root_path)
     end
   end
 

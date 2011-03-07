@@ -1,5 +1,6 @@
 TweetPoll::Application.routes.draw do
-
+	match '/home' =>  'home#home'
+	
 	get "poll/show"
 
 	post "poll/vote"
@@ -14,7 +15,7 @@ TweetPoll::Application.routes.draw do
 	 match '/auth/:provider/callback' => 'authentications#create'	 
 	
 	#home
-	match '/home' =>  'home#home'
+	
 	
 	
 	devise_for :users
