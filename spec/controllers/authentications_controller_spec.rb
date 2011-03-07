@@ -8,14 +8,9 @@ describe AuthenticationsController do
     @attr = { :user_id => 1 }
   end
 
-  it "create action should render new template when model is invalid" do
-    Authentication.create!()
-    response.should render_template(:new)
-  end
-
   it "create action should redirect when model is valid" do
     Authentication.create!(@attr)
-    response.should redirect_to(authentication_url(assigns[:authentication]))
+    response.should redirect_to :back
   end
 
   it "destroy action should destroy model and redirect to index action" do
