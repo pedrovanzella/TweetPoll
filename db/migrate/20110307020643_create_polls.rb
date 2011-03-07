@@ -2,7 +2,8 @@ class CreatePolls < ActiveRecord::Migration
   def self.up
     create_table :polls do |t|
       t.string :title
-
+			t.string :cached_slug
+			
       t.timestamps
     end
   end

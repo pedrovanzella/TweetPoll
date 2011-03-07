@@ -1,0 +1,6 @@
+%h1 New poll
+
+= semantic_form_for @poll, :url => '/poll/create', :method => :post do |f|
+	= f.inputs do
+		= f.input :title, :hint => "What's your poll about?", :label => 'Ask'
+	= f.buttons

@@ -6,11 +6,20 @@ gem 'rails', '3.0.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+
+#authorization + authentication
 gem 'devise'
 gem 'omniauth', '~> 0.2.0.beta'
+gem 'cancan'
 
 #haml/sass for front-end ease
 gem 'haml'
+
+#SEO urls
+gem 'friendly_id'
+
+#form builder
+gem 'formtastic'
 
 group :development, :test do
   gem 'shoulda'
