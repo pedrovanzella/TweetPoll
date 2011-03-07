@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Poll do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  before(:each) do
+    @attr = { title: "Test Poll" }
+  end
+
+  it "should create a new Poll given correct parameters" do
+    Poll.create!(@attr)
+  end
 end
