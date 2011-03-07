@@ -13,6 +13,7 @@ gem 'omniauth', '~> 0.2.0.beta'
 gem 'haml'
 
 group :development, :test do
+	gem 'shoulda'
 	gem "nifty-generators"
   gem 'rspec-rails'
   gem 'spork', '~> 0.9.0.rc'
