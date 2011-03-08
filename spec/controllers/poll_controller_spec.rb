@@ -32,8 +32,18 @@ describe PollController do
   end
 
   describe "GET 'destroy'" do
-    it "should be successful" do
+    it "should be successful when user is logged in and owns poll" do
+			@request.env["devise.mapping"] = :user
+			sign_in Factory.create(:user_poll)
       post 'destroy', :id => 1
+			@poll.destroy
+      response.should redirect_to(root_path)
+    end
+
+    it "should fail if user is logged but not owner" do
+    	@request.env["devise.mapping"] = :user
+			sign_in Factory.create(:user)
+			post 'destroy', :id => 1
 			@poll.destroy
       response.should redirect_to(root_path)
     end

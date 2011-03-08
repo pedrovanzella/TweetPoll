@@ -14,6 +14,8 @@ describe AuthenticationsController do
   end
 
   it "destroy action should destroy model and redirect to index action" do
+		@request.env["devise.mapping"] = :user
+		sign_in Factory.create(:user)
     authentication = Authentication.first
     delete :destroy, :id => authentication
     response.should redirect_to(authentications_url)

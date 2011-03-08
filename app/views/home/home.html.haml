@@ -6,6 +6,8 @@
 	- current_user.polls.each do |poll|
 		%li= link_to poll.title, "/poll/#{poll.cached_slug}"
 		%ul.answers
+			= button_to "destroy", { :controller => "poll", :action => "destroy", :id => poll.id },
+			            :confirm => "Are you sure?", :method => :delete
 			Total votes:
 			= poll.answers.sum(:votes)
 			%br
@@ -14,5 +16,6 @@
 				= "has #{answer.votes.to_s}"
 				= answer.votes > 1 ? "votes" : "vote"
 				%br
+				
 				
 = link_to 'New poll', '/poll/new'

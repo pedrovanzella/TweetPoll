@@ -5,7 +5,7 @@ TweetPoll::Application.routes.draw do
 
 	get "poll/new"
 
-	get "poll/destroy"
+	match "poll/destroy/:id" => 'poll#destroy'
 
 	#auth routes
 	 match '/auth/:provider/callback' => 'authentications#create'	 

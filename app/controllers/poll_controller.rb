@@ -43,7 +43,12 @@ class PollController < ApplicationController
   end
 
   def destroy
-		@poll.destroy
+		if @poll.poller == current_user
+			flash[:notice] = "Poll destroyed!"
+			@poll.destroy
+		else
+			flash[:notice] = "You can't destroy this poll"
+		end
 		redirect_to root_path
   end
 

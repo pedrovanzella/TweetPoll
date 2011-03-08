@@ -56,6 +56,10 @@ form {
 	border-radius: 3px;
 }
 
+form.button_to {
+	border: none;
+}
+
 .inline-hints {
 	color: grey;
 	text-indent: 18px;
