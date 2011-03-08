@@ -3,6 +3,7 @@ class Answer < ActiveRecord::Base
 	
 	before_create :zero_votes
 	validates :text, :presence => true
+	validates :poll, :presence => true
 	
 	def vote_up(user)
 		self.votes ||= 0

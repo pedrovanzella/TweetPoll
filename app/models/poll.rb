@@ -6,7 +6,8 @@ class Poll < ActiveRecord::Base
 	
 	belongs_to :poller, :class_name => "User" 
 	has_and_belongs_to_many :users
-  has_many :answers
+  has_many :answers, :dependent => :destroy
 	accepts_nested_attributes_for :answers
+
 
 end

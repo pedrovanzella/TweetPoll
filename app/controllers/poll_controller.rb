@@ -29,9 +29,11 @@ class PollController < ApplicationController
 		if @poll.save
 			current_user.polls << @poll
 			params['poll']['answers_attributes'].each do |answer_params|
-				@answer = Answer.new(answer_params[1])
-				@answer.poll_id = @poll.id
-				@answer.save
+				unless answer_params[1].empty?
+					@answer = Answer.new(answer_params[1])
+					@answer.poll_id = @poll.id
+					@answer.save
+				end
 			end
 			flash[:notice] = "Success!"
 			client.update("I just asked #{@poll.title}, come and help me choose: #{request.url}")
