@@ -33,7 +33,7 @@ class PollController < ApplicationController
 				@answer.save
 			end
 			flash[:notice] = "Success!"
-			client.update("I just asked #{@poll.text}, come and help me choose: #{request.url}")
+			client.update("I just asked #{@poll.title}, come and help me choose: #{request.url}")
 			redirect_to root_path
 		else
 			flash[:alert] = "Error creating poll!"
