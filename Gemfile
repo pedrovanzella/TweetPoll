@@ -21,6 +21,9 @@ gem 'friendly_id'
 #form builder
 gem 'formtastic'
 
+#sync db with heroku
+gem 'taps'
+
 group :development, :test do
   gem 'shoulda'
   gem 'shoulda-matchers'
