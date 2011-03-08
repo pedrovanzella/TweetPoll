@@ -18,12 +18,14 @@ class PollController < ApplicationController
 			@poll.users << current_user
 			@answer.save
 		end
-		redirect_to :back
+		redirect_to root_path
   end
 
   def create
 		@poll = Poll.new(params[:poll])
+		@poll.poller_id = current_user.id
 		if @poll.save
+			current_user.polls << @poll
 			params['poll']['answers_attributes'].each do |answer_params|
 				@answer = Answer.new(answer_params[1])
 				@answer.poll_id = @poll.id

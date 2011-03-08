@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :authentications
-	has_and_belongs_to_many :polls
+	has_and_belongs_to_many :voted_polls, :class_name => "Poll"
+	has_many :polls, :foreign_key => :poller_id
 	
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable

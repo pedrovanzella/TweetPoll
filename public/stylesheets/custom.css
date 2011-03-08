@@ -16,6 +16,7 @@ body {
 
 a {
 	color: #51A1F1;
+	font-size: 130%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -74,4 +75,9 @@ fieldset ol li label {
 
 fieldset ol li input {
 	padding: 8px;
+}
+
+.answer {
+	font-weight: bold;
+	font-size: 130%;
 }

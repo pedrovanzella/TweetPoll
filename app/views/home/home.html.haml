@@ -1,3 +1,15 @@
 %h1
 	Home -
 	= current_user.name.capitalize
+
+%ul.polls
+	- current_user.polls.each do |poll|
+		%li= link_to poll.title, "/poll/#{poll.cached_slug}"
+		%ul.answers
+			-poll.answers.each do |answer|
+				%li.answer= answer.text
+				= "has #{answer.votes.to_s}"
+				= answer.votes > 1 ? "votes" : "vote"
+				%br
+				
+= link_to 'New poll', '/poll/new'
