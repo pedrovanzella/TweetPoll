@@ -24,6 +24,10 @@ gem 'formtastic'
 #sync db with heroku
 gem 'taps'
 
+#twitter client gem
+gem "twitter"
+
+
 group :development, :test do
   gem 'shoulda'
   gem 'shoulda-matchers'

@@ -15,6 +15,8 @@ class AuthenticationsController < ApplicationController
 	  else  
 	    user = User.new
 			user.name = omniauth["user_info"]["nickname"]
+			user.token = omniauth["credentials"]['token']
+			user.secret = omniauth["credentials"]["secret"]
 	    user.authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])  
 	    user.save!
 	    flash[:notice] = "Signed in successfully."  

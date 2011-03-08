@@ -6,6 +6,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.rememberable
       t.trackable
 
+			t.string :token
+			t.string :secret
 			t.string :name
 			t.string :cached_slug
       # t.confirmable
