@@ -1,0 +1,76 @@
+body {
+	font-size:15px;
+	font-family: Trebuchet, Lucida, Georgia;
+	line-height: 160%;
+	background-color: #53A4F8;
+}
+
+.container{
+	background-color: #FBFCD0;
+	min-width: 900px;
+	min-height: 700px;
+	padding: 40px;
+	border: black 10px solid;
+	border-radius: 0px 0px 5px 5px;
+}
+
+a {
+	color: #51A1F1;
+}
+
+h1, h2, h3, h4, h5 {
+	text-shadow: black 2px 2px 2px;
+	color: #53A4F8;
+}
+
+#flash{
+	border-radius: 4px;
+	
+	color: #FBFCD0;
+	margin: 15px;
+	line-height: 200%;
+	text-indent: 20px;
+}
+
+.alert {
+	background-color: #FF4043;
+}
+
+.notice {
+	background-color: #72A0EC;
+}
+
+ul {
+	padding-right: 5px;
+}
+
+ul li {
+	display: inline;
+	list-style-type: none;
+}
+
+form {
+	border: solid 1px #53A4F8;
+	border-radius: 3px;
+}
+
+.inline-hints {
+	color: grey;
+	text-indent: 18px;
+}
+
+fieldset {
+	border: solid #53A4F8 0px;
+}
+
+fieldset ol {
+	list-style-type: none;
+}
+
+fieldset ol li label {
+	margin: 7px;
+}
+
+fieldset ol li input {
+	padding: 8px;
+}

@@ -12,9 +12,8 @@
 	%body
 		.container
 			%header
-				#alert
-					%p.notice
-					%p.alert
+				%p.notice#flash= notice
+				%p.alert#flash= alert
 				%nav.topbar
 					%ul
 						%li= link_to "Home", root_path

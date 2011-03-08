@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :authentications
-	has_and_belongs_to_many :answers
+	has_and_belongs_to_many :polls
 	
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable

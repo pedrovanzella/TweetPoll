@@ -1,0 +1,7 @@
+%h1= @poll.title
+
+= semantic_form_for @poll, :url => "/poll/#{@poll.id}/vote/" do |f|
+	= f.inputs do
+		= f.input :answers, :as => :radio, :collection => @collection
+	= f.buttons do
+		= f.submit

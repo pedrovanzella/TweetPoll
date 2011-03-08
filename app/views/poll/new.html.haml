@@ -2,5 +2,7 @@
 
 = semantic_form_for @poll, :url => '/poll/create', :method => :post do |f|
 	= f.inputs do
-		= f.input :title, :hint => "What's your poll about?", :label => 'Ask'
+		= f.input :title, :hint => "What's your poll about?", :label => 'Ask', :input_html => {:rows => 2}
+		= f.inputs do
+			%input{:type => 'button', :class => 'button', :id => 'button', :value => 'Add more...'}
 	= f.buttons

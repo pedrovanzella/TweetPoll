@@ -20,11 +20,6 @@ ActiveRecord::Schema.define(:version => 20110307204000) do
     t.datetime "updated_at"
   end
 
-  create_table "answers_users", :id => false, :force => true do |t|
-    t.integer "answer_id"
-    t.integer "user_id"
-  end
-
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -36,8 +31,14 @@ ActiveRecord::Schema.define(:version => 20110307204000) do
   create_table "polls", :force => true do |t|
     t.string   "title"
     t.string   "cached_slug"
+    t.integer  "poller_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "polls_users", :id => false, :force => true do |t|
+    t.integer "poll_id"
+    t.integer "user_id"
   end
 
   create_table "slugs", :force => true do |t|
