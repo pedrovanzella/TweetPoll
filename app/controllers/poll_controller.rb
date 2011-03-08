@@ -1,5 +1,6 @@
 class PollController < ApplicationController
 	before_filter :find_poll, :except => [:create, :new]
+	before_filter :authenticate_user!, :except => :show
 	
   def show
 		@collection = {}
@@ -18,7 +19,7 @@ class PollController < ApplicationController
 			@poll.users << current_user
 			@answer.save
 		end
-		client.update("When asked #{@answer.poll.title} I chose #{@answer.text}! Vote on http://tweetpoll.heroku.com/poll/#{@poll.cached_slug}")
+		client.update("When asked '#{@answer.poll.title}' I chose #{@answer.text}! Vote on http://tweetpoll.heroku.com/poll/#{@poll.cached_slug}")
 		redirect_to root_path
   end
 
