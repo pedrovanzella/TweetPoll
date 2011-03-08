@@ -6,6 +6,9 @@
 	- current_user.polls.each do |poll|
 		%li= link_to poll.title, "/poll/#{poll.cached_slug}"
 		%ul.answers
+			Total votes:
+			= poll.answers.sum(:votes)
+			%br
 			-poll.answers.each do |answer|
 				%li.answer= answer.text
 				= "has #{answer.votes.to_s}"
