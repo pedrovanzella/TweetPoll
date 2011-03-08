@@ -4,6 +4,14 @@ class ApplicationController < ActionController::Base
 	require "twitter"
 
 
+	def after_sign_in_path_for(resource_or_scope)
+	  if resource_or_scope.is_a?(User)
+	    :back
+	  else
+	    super
+	  end
+	end
+
 	def client	
 		Twitter.configure do |config|
 		  config.consumer_key = 'MQOtmTkwmCCs5fmVMXMhg'
