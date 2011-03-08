@@ -18,7 +18,7 @@ class PollController < ApplicationController
 			@poll.users << current_user
 			@answer.save
 		end
-		client.update("When asked #{answer.poll.title} I chose #{@answer.text}! Vote on #{request.url}")
+		client.update("When asked #{@answer.poll.title} I chose #{@answer.text}! Vote on http://tweetpoll.heroku.com/poll/#{@poll.cached_slug}")
 		redirect_to root_path
   end
 
