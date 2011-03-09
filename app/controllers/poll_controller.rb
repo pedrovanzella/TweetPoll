@@ -1,5 +1,5 @@
 class PollController < ApplicationController
-	before_filter :find_poll, :except => [:create, :new]
+	before_filter :find_poll, :except => [:create, :new, :random]
 	before_filter :authenticate_user!, :except => :show
 	
   def show
@@ -9,6 +9,17 @@ class PollController < ApplicationController
 		end
 		@collection
   end
+
+	def random
+		offset = rand(Poll.count)
+		@poll = Poll.first(:offset => offset)
+		@collection = {}
+		@poll.answers.order(:votes.desc).each do |a|
+		 	@collection[a.text] = a.id
+		end
+		@collection
+		render :show
+	end
 
 	def new
 		@poll = Poll.new

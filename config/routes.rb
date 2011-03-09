@@ -1,6 +1,6 @@
 TweetPoll::Application.routes.draw do
 	match '/home' =>  'home#home'
-
+	get '/random' => 'poll#random'
 	post "poll/create"
 
 	get "poll/new"
