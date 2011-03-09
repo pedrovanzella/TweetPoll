@@ -21,7 +21,7 @@ class PollController < ApplicationController
 		end
 		begin
 			url = bitly.shorten("http://tweetpoll.me/#{@poll.cached_slug}").short_url
-			client.update("When asked '#{@answer.poll.title}' I chose \"#{@answer.text}\"! Vote on #{url}")
+			client.update("When asked \"#{@answer.poll.title}\" I chose \"#{@answer.text}\"! Vote on #{url}")
 		rescue
 			flash[:alert] = "An error has happened! :("
 		end
@@ -43,7 +43,7 @@ class PollController < ApplicationController
 			flash[:notice] = "Success!"
 			begin
 				url = bitly.shorten("http://tweetpoll.me//poll/#{@poll.cached_slug}").short_url
-				client.update("I just asked #{@poll.title}, come and help me choose: #{url}")
+				client.update("I just asked \"#{@poll.title}\", come and help me choose: \"#{url}\"")
 			rescue
 				flash[:alert] = "An error has happened! :("
 			end
