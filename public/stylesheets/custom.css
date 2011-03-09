@@ -170,3 +170,8 @@ nav.topbar a {
 	text-indent: 50px;
 	line-height: 240%;
 }
+
+.polls {
+	padding: 10px;
+	margin: 10px;
+}

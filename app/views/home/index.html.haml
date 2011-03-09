@@ -1,11 +1,20 @@
 %h1 TweetPoll
 - if current_user
-	
-	= link_to 'New poll', '/poll/new'
+
 	
 	
 - else
 
 	%p.bigger Please log in to create new polls!
-	
-	
+
+
+.polls
+	%h2 Top 5 polls
+	%ul
+		- @polls.each do |poll|
+			%li= link_to poll.title, "/poll/#{poll.cached_slug}"
+			%ul.answers
+				%br
+				-poll.answers.each do |answer|
+					%li.answer= answer.text
+					%br

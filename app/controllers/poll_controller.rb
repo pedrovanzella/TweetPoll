@@ -4,7 +4,7 @@ class PollController < ApplicationController
 	
   def show
 		@collection = {}
-		@poll.answers.each do |a|
+		@poll.answers.order(:votes.desc).each do |a|
 		 	@collection[a.text] = a.id
 		end
 		@collection

@@ -11,11 +11,8 @@
 			Total votes:
 			= poll.answers.sum(:votes)
 			%br
-			-poll.answers.each do |answer|
+			-poll.answers.order(:votes.desc).each do |answer|
 				%li.answer= answer.text
 				= "has #{answer.votes.to_s}"
 				= answer.votes > 1 ? "votes" : "vote"
 				%br
-				
-				
-= link_to 'New poll', '/poll/new'
