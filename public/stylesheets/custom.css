@@ -70,6 +70,8 @@ fieldset {
 
 fieldset ol {
 	list-style-type: none;
+	line-height: 160%;
+	font-size: 120%;
 }
 
 fieldset ol li label {
