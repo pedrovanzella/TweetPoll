@@ -7,6 +7,7 @@ class PollController < ApplicationController
 		@poll.answers.each do |a|
 		 	@collection[a.text] = a.id
 		end
+		@collection.reverse!
   end
 
 	def new
