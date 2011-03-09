@@ -3,7 +3,7 @@
 	= current_user.name.capitalize
 
 %ul.polls
-	- current_user.polls.each do |poll|
+	- current_user.polls.order(:created_at.desc).each do |poll|
 		%li= link_to poll.title, "/poll/#{poll.cached_slug}"
 		%ul.answers
 			= button_to "destroy", { :controller => "poll", :action => "destroy", :id => poll.id },
