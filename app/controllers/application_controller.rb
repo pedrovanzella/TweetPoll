@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
 	    super
 	  end
 	end
+	
+	def bitly
+		@bitly = Bitly.new('elland', 'R_d0eb4b962b432e3313f1b2412e98f1e0')
+	end
 
 	def client	
 		Twitter.configure do |config|

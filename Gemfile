@@ -27,6 +27,8 @@ gem 'taps'
 #twitter client gem
 gem "twitter"
 
+#url shortener
+gem 'bitly'
 
 group :development, :test do
   gem 'shoulda'

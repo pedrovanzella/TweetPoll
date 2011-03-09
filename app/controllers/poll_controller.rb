@@ -19,7 +19,12 @@ class PollController < ApplicationController
 			@poll.users << current_user
 			@answer.save
 		end
-		client.update("When asked '#{@answer.poll.title}' I chose #{@answer.text}! Vote on http://tweetpoll.heroku.com/poll/#{@poll.cached_slug}")
+		begin
+			url = bitly.shorten("http://tweetpoll.me/#{@poll.cached_slug}").short_url
+			client.update("When asked '#{@answer.poll.title}' I chose \"#{@answer.text}\"! Vote on #{url}")
+		rescue
+			flash[:alert] = "An error has happened! :("
+		end
 		redirect_to root_path
   end
 
@@ -36,7 +41,12 @@ class PollController < ApplicationController
 				end
 			end
 			flash[:notice] = "Success!"
-			client.update("I just asked #{@poll.title}, come and help me choose: #{request.url}")
+			begin
+				url = bitly.shorten("http://tweetpoll.me//poll/#{@poll.cached_slug}").short_url
+				client.update("I just asked #{@poll.title}, come and help me choose: #{url}")
+			rescue
+				flash[:alert] = "An error has happened! :("
+			end
 			redirect_to root_path
 		else
 			flash[:alert] = "Error creating poll!"
