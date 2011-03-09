@@ -8,10 +8,14 @@ class Answer < ActiveRecord::Base
 	def vote_up(user)
 		self.votes ||= 0
 		unless self.poll.users.include? user
-			self.poll.user << user
+			self.poll.users << user
 			self.votes += 1
+			@return = true
+		else
+			@return = false
 		end
 		self.save
+		@return
 	end
 	
 	private 

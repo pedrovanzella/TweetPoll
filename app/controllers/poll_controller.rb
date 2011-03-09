@@ -15,10 +15,7 @@ class PollController < ApplicationController
 
   def vote
 		@answer = Answer.find(params[:poll][:answer_ids])
-		if @answer.vote_up(current_user)
-			@poll.users << current_user
-			@answer.save
-		
+		if @answer.vote_up(current_user)		
 			begin
 				url = bitly.shorten("http://tweetpoll.me/poll/#{@poll.cached_slug}").short_url
 				client.update("When asked \"#{@answer.poll.title}\" I chose \"#{@answer.text}\"! Vote on #{url}")
