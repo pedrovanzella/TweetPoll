@@ -18,12 +18,15 @@ class PollController < ApplicationController
 		if @answer.vote_up(current_user)
 			@poll.users << current_user
 			@answer.save
-		end
-		begin
-			url = bitly.shorten("http://tweetpoll.me/#{@poll.cached_slug}").short_url
-			client.update("When asked \"#{@answer.poll.title}\" I chose \"#{@answer.text}\"! Vote on #{url}")
-		rescue
-			flash[:alert] = "An error has happened! :("
+		
+			begin
+				url = bitly.shorten("http://tweetpoll.me/#{@poll.cached_slug}").short_url
+				client.update("When asked \"#{@answer.poll.title}\" I chose \"#{@answer.text}\"! Vote on #{url}")
+			rescue
+				flash[:alert] = "An error has happened! :("
+			end
+		else
+			flash[:alert] = "You cannot vote more than once per poll!"
 		end
 		redirect_to root_path
   end
