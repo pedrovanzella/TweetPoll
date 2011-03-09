@@ -6,7 +6,7 @@ body {
 }
 
 .container{
-	background-color: #FBFCD0;
+	background-color: #fafafa;
 	min-width: 900px;
 	min-height: 700px;
 	padding: 40px;
@@ -84,4 +84,20 @@ fieldset ol li input {
 .answer {
 	font-weight: bold;
 	font-size: 130%;
+}
+
+nav.topbar {
+	padding-top: 25px;
+	position: relative;
+	top: -66px;
+	left: -50px;
+	background-color: grey;
+	min-width: 1040px;
+	border: 5px solid #515151 ;
+	text-align: right;
+	line-height: 10%;
+}
+
+nav.topbar a {
+	color: white;
 }
