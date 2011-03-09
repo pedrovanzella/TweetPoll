@@ -32,7 +32,7 @@ class PollController < ApplicationController
 				url = bitly.shorten("http://tweetpoll.me/poll/#{@poll.cached_slug}").short_url
 				client.update("When asked \"#{@answer.poll.title}\" I chose \"#{@answer.text}\"! Vote on #{url}")
 			rescue
-				flash[:alert] = "An error has happened! :("
+				flash[:alert] = "An error has happened and we could not post your tweet, your vote was computed though :/"
 			end
 		else
 			flash[:alert] = "You cannot vote more than once per poll!"
