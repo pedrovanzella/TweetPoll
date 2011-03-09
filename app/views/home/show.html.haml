@@ -1,0 +1,14 @@
+%h1= "Profile - " + @user.name.capitalize
+
+
+%p.poller
+	= @user.name.capitalize + "'s polls: "
+
+%ul.polls
+	- @user.polls.each do |poll|
+		%li= link_to poll.title, "/poll/#{poll.cached_slug}"
+		%ul.answers
+			%br
+			-poll.answers.each do |answer|
+				%li.answer= answer.text
+				%br

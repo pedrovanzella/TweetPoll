@@ -70,7 +70,7 @@ fieldset {
 
 fieldset ol {
 	list-style-type: none;
-	line-height: 160%;
+	line-height: 200%;
 	font-size: 120%;
 }
 
@@ -154,8 +154,19 @@ nav.topbar a {
 	border-bottom: 1px solid rgba(0,0,0,0.25);
 	position: relative;
 	display: inline;
-	left: 180px;
-	top: 30px;
+	left: 200px;
+	top: -30px;
 	font-size: 130%;
 	cursor: pointer;
+}
+
+.poller {
+	font-size: 120%;
+	text-indent: 30px;
+}
+
+.bigger {
+	font-size: 140%;
+	text-indent: 50px;
+	line-height: 240%;
 }

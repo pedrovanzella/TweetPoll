@@ -27,6 +27,9 @@ gem 'taps'
 #twitter client gem
 gem "twitter"
 
+#better where clause
+gem "meta_where"
+
 #url shortener
 gem 'bitly'
 
