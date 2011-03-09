@@ -12,8 +12,6 @@
 	%body
 		.container
 			%header
-				%p.notice#flash= notice
-				%p.alert#flash= alert
 				%nav.topbar
 					%ul
 						%li= link_to "Home", root_path
@@ -22,5 +20,7 @@
 							%li= link_to "Sign out", destroy_user_session_path
 						- else
 							%li= link_to "Sign in", '/auth/twitter'
+				%p.notice#flash= notice
+				%p.alert#flash= alert
 			%section.body_content
 				= yield

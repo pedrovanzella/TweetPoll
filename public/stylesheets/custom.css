@@ -26,7 +26,6 @@ h1, h2, h3, h4, h5 {
 
 #flash{
 	border-radius: 4px;
-	
 	color: #FBFCD0;
 	margin: 15px;
 	line-height: 200%;
@@ -89,7 +88,7 @@ fieldset ol li input {
 nav.topbar {
 	padding-top: 25px;
 	position: relative;
-	top: -66px;
+	top: -58px;
 	left: -50px;
 	background-color: grey;
 	min-width: 1040px;
@@ -100,4 +99,23 @@ nav.topbar {
 
 nav.topbar a {
 	color: white;
+}
+
+.button_to_delete {
+	background: #53A4F8;
+	display: inline-block;
+	padding: 3px 6px 4px;
+	color: #fff;
+	text-decoration: none;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	display: inline;
+	left: -80px;
+	top: -30px;
+	cursor: pointer;
 }

@@ -7,7 +7,7 @@
 		%li= link_to poll.title, "/poll/#{poll.cached_slug}"
 		%ul.answers
 			= button_to "destroy", { :controller => "poll", :action => "destroy", :id => poll.id },
-			            :confirm => "Are you sure?", :method => :delete
+			            :confirm => "Are you sure?", :method => :delete, :class => "button_to_delete"
 			Total votes:
 			= poll.answers.sum(:votes)
 			%br

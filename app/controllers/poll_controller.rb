@@ -62,7 +62,7 @@ class PollController < ApplicationController
 		else
 			flash[:notice] = "You can't destroy this poll"
 		end
-		redirect_to root_path
+		redirect_to :back
   end
 
 	private 
