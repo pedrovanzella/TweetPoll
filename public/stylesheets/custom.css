@@ -120,7 +120,7 @@ nav.topbar a {
 }
 
 .button_to_delete {
-	background: red;
+	background: #F71E50;
 	display: inline-block;
 	padding: 3px 6px 4px;
 	color: #fff;
