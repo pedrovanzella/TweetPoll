@@ -21,7 +21,7 @@ describe PollController do
         @answers << Answer.create!(:text => i.to_s, :poll => @poll)
       end
       @poll.answers = @answers
-      @answers.first.vote_up(User.create(:name => 'name'))
+      @answers.first.vote_up(Factory(:user))
       response.should be_successful
     end
   end
