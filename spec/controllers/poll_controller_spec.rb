@@ -9,7 +9,7 @@ render_views
 
   describe "GET 'new'" do
 
-    it { should have_tag("input[type=checkbox]", :content => /tweet/i)}
+    it { should have_selector("input", :type => "checkbox", :content => "Tweet this?")}
   end
 
   describe "GET show without id" do
