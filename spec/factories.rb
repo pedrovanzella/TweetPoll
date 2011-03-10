@@ -3,6 +3,6 @@ Factory.define :user do |u|
 end
 
 Factory.define :user_poll, :class => User do |p|
-	p.name 'John'
-	p.polls [Poll.create(:title => "poll")]
+  p.name 'John'
+  p.polls [Poll.create(:title => "poll")]
 end
