@@ -1,9 +1,15 @@
 require 'spec_helper'
 
 describe PollController do
+render_views
 
   before(:each) do
     @poll = Poll.create!(:title => "title")
+  end
+
+  describe "GET 'new'" do
+
+    it { should have_tag("input[type=checkbox]", :content => /tweet/i)}
   end
 
   describe "GET show without id" do
