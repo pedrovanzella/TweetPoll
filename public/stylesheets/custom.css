@@ -2,26 +2,26 @@ body {
 	font-size:15px;
 	font-family: Trebuchet, Lucida, Georgia;
 	line-height: 160%;
-	background-color: #53A4F8;
+	background-color: #aabbbb;
 }
 
 .container{
-	background-color: #fafafa;
+	background-color: #6699aa;
 	min-width: 900px;
 	min-height: 700px;
 	padding: 40px;
-	border: #515151 10px solid;
+	border: #6699bb 10px solid;
 	border-radius: 0px 0px 5px 5px;
 }
 
 a {
-	color: #51A1F1;
+	color: #3366aa;
 	font-size: 130%;
 }
 
 h1, h2, h3, h4, h5 {
 	text-shadow: black 2px 2px 2px;
-	color: #53A4F8;
+	color: #0066dd;
 }
 
 #flash{
@@ -51,7 +51,7 @@ ul li {
 }
 
 form {
-	border: solid 1px #53A4F8;
+	border: solid 1px #0066aa;
 	border-radius: 3px;
 }
 
@@ -65,7 +65,7 @@ form.button_to {
 }
 
 fieldset {
-	border: solid #53A4F8 0px;
+	border: solid #0066dd 0px;
 }
 
 fieldset ol {
@@ -94,7 +94,7 @@ nav.topbar {
 	left: -50px;
 	background-color: grey;
 	min-width: 1040px;
-	border: 5px solid #515151 ;
+	border: 5px solid #66ccdd ;
 	text-align: right;
 	line-height: 10%;
 }
@@ -104,7 +104,7 @@ nav.topbar a {
 }
 
 .button, .create {
-	background-color: #53A4F8;
+	background-color: #66ccdd;
 	display: inline-block;
 	padding: 3px 6px 4px;
 	color: #fff;
@@ -122,7 +122,7 @@ nav.topbar a {
 }
 
 .button_to_delete {
-	background: #F71E50;
+	background: #66ccdd;
 	display: inline-block;
 	padding: 3px 6px 4px;
 	color: #fff;
@@ -141,7 +141,7 @@ nav.topbar a {
 }
 
 #poll_submit {
-	background: #53A4F8;
+	background: #66ccdd;
 	display: inline-block;
 	padding: 10px 20px 16px;
 	color: #fff;
@@ -186,5 +186,5 @@ input[type="radio"] {
 }
 
 input[type="radio"]:active, input[type="radio"]:checked {
-	background-color: #53A4F8;
+	background-color: #66ccff;
 }
